@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    // Check if the number is positive
+    if (n < 0) {
+        cout << "No" << endl;
+        return 0;
+    }
+
+    // Convert integer to string for easy comparison
+    string str = to_string(n);
+    int start = 0;
+    int end = str.size() - 1;
+
+    bool isPalindrome = true;
+
+    while (start < end) {
+        if (str[start] != str[end]) {
+            isPalindrome = false;
+            break;
+        }
+        start++;
+        end--;
+    }
+
+    if (isPalindrome) {
+        cout << "True" << endl;
+    } else {
+        cout << "No" << endl;
+    }
+
+    return 0;
+}
